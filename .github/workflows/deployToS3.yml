@@ -30,4 +30,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: 'eu-north-1'  # Set your region
         run: |
-          aws s3 sync ./build s3://react-cra-static-website-hosting --delete --region $AWS_REGION
+          aws s3 sync ./build s3://react-cra-static-website-hosting --delete --region ${{ secrets.AWS_REGION }}
