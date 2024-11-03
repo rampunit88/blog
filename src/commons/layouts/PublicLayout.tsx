@@ -1,8 +1,13 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+import Header from '../header/Header'
 
 function PublicLayout() {
   return (
-    <div>PublicLayout</div>
+    <div className="bg-white">
+      <Header />
+      <Outlet />
+    </div>
   )
 }
 
