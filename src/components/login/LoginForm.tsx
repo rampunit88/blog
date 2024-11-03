@@ -17,9 +17,8 @@ function LoginForm({onLoginSuccess}:any) {
     const handleLogin = async (e:any) => {
         e.preventDefault();
         const {email,password} = values;
-        const { data, error } = await userLogin(email,password);
-        onLoginSuccess(data);
-        setMessage("You have been logged in successfully")
+        const { data, error } = await userLogin(email,password);  
+        setData(initValue);      
         if (error) {
           console.error("Error during login:", error);
           setError("Login failed. Please check your credentials and try again.");
@@ -29,6 +28,8 @@ function LoginForm({onLoginSuccess}:any) {
         if (data) {
           console.log("Login successful:", data);
           // Proceed with storing the user data, e.g., context or session storage
+          onLoginSuccess(data);
+          setMessage("You have been logged in successfully")
         }
       };
     

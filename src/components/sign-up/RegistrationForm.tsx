@@ -22,7 +22,7 @@ function RegistrationForm() {
         e.preventDefault();
         const { email, password } = values;
         const { data, error } = await userRegistration(email, password);
-        setMessage("Your account has been successfully created")
+        setData(initValue)
         if (error) {
             console.error("Error during login:", error);
             setError("Registration failed. Please check your credentials and try again.");
@@ -32,6 +32,7 @@ function RegistrationForm() {
         if (data) {
             console.log("Registration successful:", data);
             // Proceed with storing the user data, e.g., context or session storage
+            setMessage("Your account has been successfully created")
         }
     };
 
