@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import React from 'react'
 import Header from '../../commons/header/Header'
 
 export default function HomePage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <div className="bg-white">

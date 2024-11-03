@@ -18,10 +18,11 @@ function LoginForm({onLoginSuccess}:any) {
         e.preventDefault();
         const {email,password} = values;
         const { data, error } = await userLogin(email,password);
-        onLoginSuccess(data)
+        onLoginSuccess(data);
+        setMessage("You have been logged in successfully")
         if (error) {
           console.error("Error during login:", error);
-          alert("Login failed. Please check your credentials and try again.");
+          setError("Login failed. Please check your credentials and try again.");
           return;
         }
       

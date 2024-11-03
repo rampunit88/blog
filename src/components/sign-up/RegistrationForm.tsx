@@ -22,9 +22,10 @@ function RegistrationForm() {
         e.preventDefault();
         const { email, password } = values;
         const { data, error } = await userRegistration(email, password);
+        setMessage("Your account has been successfully created")
         if (error) {
             console.error("Error during login:", error);
-            alert("Registration failed. Please check your credentials and try again.");
+            setError("Registration failed. Please check your credentials and try again.");
             return;
         }
 
